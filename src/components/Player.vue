@@ -46,6 +46,7 @@ export default {
   $natural: #e6ab85;
   $darkbrown: #3a2114;
 
+  position: relative;
   display: grid;
   place-items: stretch;
   background-color: var(--primary);
@@ -70,13 +71,15 @@ export default {
     --score: #{$white};
   }
 
-  .score,
-  .buttons {
-    grid-column: 1;
-    grid-row: 1;
-  }
+  //.score,
+  //.buttons {
+  //  grid-column: 1;
+  //  grid-row: 1;
+  //}
 
   .score {
+    grid-column: 1;
+    grid-row: 1;
     place-self: center;
     font-size: 50vh;
     line-height: 1;
@@ -85,6 +88,11 @@ export default {
   }
 
   .buttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     place-items: stretch;
@@ -95,12 +103,11 @@ export default {
       border-radius: 0;
       background-color: transparent;
 
-      &:hover,
-      &:focus-visible {
+      &:hover {
         background-color: rgba(0, 0, 0, .5);
       }
 
-      &:focus-visible {
+      &:focus {
         outline: none;
       }
     }
