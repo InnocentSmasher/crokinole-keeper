@@ -2,7 +2,11 @@
   <div class="scoreboard">
     <player-component color="white" :key="game" />
     <player-component color="black" :key="game" />
-    <button @click="resetGame" class="btn-reset">
+    <button
+      @click="resetGame"
+      aria-label="reset game"
+      class="btn-reset"
+    >
       <icon-reset />
     </button>
   </div>
@@ -36,6 +40,11 @@ export default {
   grid-template-columns: repeat(2, 1fr);
   height: 100%;
 
+  @media (orientation: portrait) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
   .btn-reset {
     position: absolute;
     height: 20vh;
@@ -49,6 +58,12 @@ export default {
     border-radius: 10vh;
     border: 0;
     box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.25);
+
+    @media (orientation: portrait) {
+      height: 20vw;
+      width: 20vw;
+      border-radius: 10vw;
+    }
   }
 }
 </style>

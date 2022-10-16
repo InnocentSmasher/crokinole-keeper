@@ -26,11 +26,10 @@ export default {
   ],
   data: () => ({
     score: 0,
-    minScore: 0,
   }),
   methods: {
     increment() {
-      this.score += 5;
+      this.score < 150 ? this.score += 5 : null;
     },
     decrement() {
       this.score > 0 ? this.score -= 5 : null;
@@ -71,20 +70,16 @@ export default {
     --score: #{$white};
   }
 
-  //.score,
-  //.buttons {
-  //  grid-column: 1;
-  //  grid-row: 1;
-  //}
-
   .score {
-    grid-column: 1;
-    grid-row: 1;
     place-self: center;
     font-size: 50vh;
     line-height: 1;
     color: var(--score);
     text-shadow: 0 0.25rem 0.5rem var(--text-shadow);
+
+    @media (orientation: portrait) {
+      font-size: 50vw;
+    }
   }
 
   .buttons {
@@ -104,11 +99,12 @@ export default {
       background-color: transparent;
 
       &:hover {
-        background-color: rgba(0, 0, 0, .5);
+        background-color: rgba(0, 0, 0, .25);
       }
 
-      &:focus {
-        outline: none;
+      &:focus,
+      &:focus-visible {
+        outline: none !important;
       }
     }
   }
