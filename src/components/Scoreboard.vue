@@ -38,15 +38,15 @@ export default {
 
   .btn-reset {
     position: absolute;
-    height: 10vh;
-    width: 10vh;
+    height: 20vh;
+    width: 20vh;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 0;
     background-color: rgba(255, 255, 255, 0.9);
     color: #000;
-    border-radius: 5vh;
+    border-radius: 10vh;
     border: 0;
     box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.25);
   }
