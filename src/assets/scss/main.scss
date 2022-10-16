@@ -22,6 +22,7 @@ body {
   color: var(--text);
   font-family: ui-sans-serif, system-ui, -system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji";
   margin: 0;
+  touch-action: manipulation;
 }
 
 *,
